@@ -35,5 +35,4 @@ while x != "Exit":
 
         flashcards_data.append({"word": word, "answer": answer})
 
-        save_flashcards(flashcards_data)
-
+        save_flashcards(flashcards_data) 
