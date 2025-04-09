@@ -30,8 +30,35 @@ if x == "Teacher":
 
     with open("flashcards.json", "w") as file:
         json.dump(flashcards_data, file, indent=4)
-        
+
     x = input("Would you like to enter Teacher or Student mode: ")
 
-elif x == "Students":
-    print("Work in Progress")
+if x == "Student":
+    with open("./flashcards.json", encoding="utf8") as Flashcard:
+        data = json.load(Flashcard)
+
+    class Student:
+        def __init__(self, tally):
+            self.tally = tally
+
+        def streak(self):
+            return f"tally"
+
+    y = input("Continue? ")
+
+    play = 0  
+
+    while y == "Yes":
+        for flashcard in data:  
+            print(flashcard["word"])
+            b = input("What's the answer? ")
+            if b == flashcard["answer"]:
+                print("Correct")
+                play += 1 
+            else:
+                print("Incorrect")
+                break 
+
+            y = input("Would you like to Continue? ")
+            if y != "Yes":
+                break 
